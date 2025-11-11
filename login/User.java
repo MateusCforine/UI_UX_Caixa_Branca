@@ -14,16 +14,9 @@ public class User {
     public Connection conectarBD(){
         Connection conn = null; // Cria uma variável de conexão nula para iniciar
         try{
-            // Carrega o driver JDBC do MySQL
-            // O erro acontecia exatamente nesta linha abaixo:
-            // ClassNotFoundException: com.mysql.cj.jdbc.Driver
-            //
-            // Isso significa que o Java não encontrou o driver do MySQL.
-            // O motivo é que o arquivo 'mysql-connector-j.jar' não estava adicionado ao classpath do projeto.
-            // Sem esse arquivo, o Java não consegue se comunicar com o banco.
-            //
-            // A correção foi baixar o MySQL Connector/J, colocar o .jar dentro da pasta 'lib'
-            // e adicioná-lo ao classpath no VS Code.
+            // Possível erro aqui:
+            // Se o driver do MySQL (mysql-connector-j.jar) não estiver no classpath,
+            // esta linha lança ClassNotFoundException, impedindo a conexão.
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             // Define a URL de conexão (endereço do banco, usuário e senha)
@@ -33,12 +26,12 @@ public class User {
             conn = DriverManager.getConnection(url);
 
         }catch (ClassNotFoundException e) {
-            // Caso o driver não seja encontrado, exibe mensagem explicando o problema
-            System.out.println("Erro: Driver do MySQL não encontrado. Adicione o arquivo mysql-connector-j.jar ao classpath.");
+            // Driver JDBC não encontrado
+            System.out.println("Erro: Driver do MySQL não encontrado. Adicione o mysql-connector-j.jar ao classpath.");
             e.printStackTrace();
 
         }catch (Exception e) {
-            // Caso ocorra qualquer outro erro na tentativa de conexão
+            // Outros erros de conexão (URL, banco, usuário ou senha incorretos, por exemplo)
             System.out.println("Erro ao conectar com o banco de dados. Verifique a URL, usuário e senha.");
             e.printStackTrace();
         }
@@ -56,11 +49,9 @@ public class User {
         String sql = ""; // String que vai conter o comando SQL
         Connection conn = conectarBD(); // Abre conexão com o banco
 
-        // Segundo erro: NullPointerException acontecia aqui embaixo.
-        // Quando o driver não era encontrado, o método conectarBD() retornava 'null'.
-        // Mesmo assim, o código tentava usar 'conn.createStatement()', e como 'conn' era nulo,
-        // o Java gerava um NullPointerException.
-        // A correção foi incluir uma verificação: se a conexão for nula, o método encerra e mostra uma mensagem.
+        // Possível origem de NullPointerException:
+        // se conectarBD() falhar e retornar null, qualquer uso de conn
+        // (como conn.createStatement()) causaria erro. Por isso é feita a verificação.
         if (conn == null) {
             System.out.println("Conexão falhou. O programa não conseguiu se comunicar com o banco de dados.");
             return false;
@@ -95,12 +86,10 @@ public class User {
     // MÉTODO PRINCIPAL (main) — PONTO DE ENTRADA DO PROGRAMA
     public static void main(String[] args) {
 
-        // Esse foi o primeiro erro encontrado, pois o Java precisa de um ponto de entrada
-        // para iniciar o programa. Sem ele, o erro apresentado foi:
-        // "Main method not found in the file".
-        // A correção foi adicionar esse método para permitir a execução do código.
-        // Cria um novo objeto da classe User para acessar os métodos
+        // o método main não estava presente, e o Java não tinha ponto de entrada
+        // para iniciar a aplicação, gerando a mensagem "Main method not found in the file".
 
+        // Cria um novo objeto da classe User para acessar os métodos
         User usuario = new User();
 
         // Chama o método verificarUsuario, passando login e senha fixos
