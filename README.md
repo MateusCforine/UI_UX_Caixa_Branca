@@ -14,3 +14,20 @@ N1 → N2 → N3 → N4 → N5 → N7 → N8 → N9 → N11 → N16 → N17 → 
 Fluxo em que a tentativa de conexão falha, a verificação é interrompida e o sistema retorna erro de login:
 
 N1 → N2 → N3 → N6 → N7 → N8 → N9 → N10 → N11 → N16 → N17 → N18 → N19 → N20 → N21 → N22
+
+
+COMPLEXIDADE CICLOMÁTICA;
+
+Cálculo resumido da Complexidade Ciclomática
+
+𝑉(𝐺)=𝐸−𝑁+2V(G)=E−N+2
+
+E = 22 (arestas)
+N = 22 (nós)
+
+𝑉(𝐺)=22−22+2=2
+
+Outra forma (pela quantidade de decisões):
+
+Há 3 decisões (if)
+V(G)=3+1=4
