@@ -6,8 +6,8 @@
     import java.sql.DriverManager;
     import java.sql.ResultSet;
     import java.sql.Statement;
-    public class User { //N1
     
+    public class User { //N1
     public Connection conectarBD(){ //N2 
         Connection conn = null; //N3
         try { //N4            
@@ -22,7 +22,6 @@
     public boolean result = false; 
     
     public boolean verificarUsuario(String login, String senha){ //N8
-    
         String sql = "";
         Connection conn = conectarBD(); //N9
 
@@ -40,8 +39,9 @@
         } catch (Exception e) { //N15
         }
         return result; //N16
+    }    
     }
-    }
+
 
 
 COMPLEXIDADE CICLOMÁTICA;
