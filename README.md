@@ -34,13 +34,20 @@ public class User { //N1
         try { //N11
             Statement st = conn.createStatement(); |
             ResultSet rs = st.executeQuery(sql);   | //N12
-            if(rs.next()){//N
+            if(rs.next()){ //N13
                 result = true;                 |
-                nome = rs.getString("nome");   | //N13
+                nome = rs.getString("nome");   | //N14
             }
-        } catch (Exception e) { //N14
+        } catch (Exception e) { //N15
         }
-        return result; //N15
+        return result; //N16
     }
 }
 
+
+COMPLEXIDADE CICLOMÁTICA;
+
+M = E - N + 2P
+17 - 16 + 2 = 3
+
+CAMINHOS BÁSICOS 
