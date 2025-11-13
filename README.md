@@ -1,3 +1,9 @@
+Após arrumar o código, que apresentava alguns erros, como por exemplo, banco de dados não conectado.
+Segue o resultado no terminal, após analisar e alterar as informações do código.
+<img width="600" height="197" alt="image" src="https://github.com/user-attachments/assets/4da253b3-01f6-49fb-ae66-61e4e7b8413d" />
+
+    
+    
     1° Parte da Atividade - Teste Caixa Branca
     
     package login;
