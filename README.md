@@ -21,28 +21,28 @@ public class User {
     public String nome = ""; //N6
     public boolean result = false; //N7
 
-    public boolean verificarUsuario(String login, String senha){ //N8
-        String sql = "";N9
-        Connection conn = conectarBD(); //N10
+    public boolean verificarUsuario(String login, String senha){ 
+        String sql = "";N8
+        Connection conn = conectarBD(); //N9
 
 
 
 
 
         sql = "select nome from usuarios ";      |
-        sql += "where login = '" + login + "'";  | //N11
+        sql += "where login = '" + login + "'";  | //N10
         sql += " and senha = '" + senha + "'";   |
 
-        try { //N12
+        try { //N11
             Statement st = conn.createStatement(); |
-            ResultSet rs = st.executeQuery(sql);   | //N13
+            ResultSet rs = st.executeQuery(sql);   | //N12
             if(rs.next()){
                 result = true;                 |
-                nome = rs.getString("nome");   | //N14
+                nome = rs.getString("nome");   | //N13
             }
-        } catch (Exception e) { //N15
+        } catch (Exception e) { //N14
         }
-        return result; //N16
+        return result; //N15
     }
 }
 
@@ -75,7 +75,16 @@ Cálculo resumido da Complexidade Ciclomática
 𝑉(𝐺)=𝐸−𝑁+2V(G)=E−N+2
 
 E = 22 (arestas)
-N = 22 (nós)
+N = 14 
+
+
+
+
+
+
+
+
+(nós)
 
 𝑉(𝐺)=22−22+2=2
 
