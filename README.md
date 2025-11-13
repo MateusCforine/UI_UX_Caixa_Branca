@@ -1,5 +1,4 @@
-Após arrumar o código, que apresentava alguns erros, como por exemplo, banco de dados não conectado.
-Segue o resultado no terminal, após analisar e alterar as informações do código.
+Após corrigir os erros no código, como a falta de conexão com o banco de dados, fiz as alterações necessárias. Abaixo está o resultado no terminal
 
 <img width="600" height="197" alt="image" src="https://github.com/user-attachments/assets/4da253b3-01f6-49fb-ae66-61e4e7b8413d" />
 
@@ -49,6 +48,9 @@ Segue o resultado no terminal, após analisar e alterar as informações do cód
     }    
     }
 
+NOTAÇÃO DE GRAFO DE FLUXO;
+
+<img width="1024" height="768" alt="N" src="https://github.com/user-attachments/assets/dcbacc0e-43b9-4893-8586-572a3a62d8bd" />
 
 
 COMPLEXIDADE CICLOMÁTICA;
