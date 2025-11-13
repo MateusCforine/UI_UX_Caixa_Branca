@@ -48,6 +48,7 @@ public class User { //N1
 COMPLEXIDADE CICLOMÁTICA;
 
 M = E - N + 2P
+
 17 - 16 + 2 = 3
 
 CAMINHOS BÁSICOS 
