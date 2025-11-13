@@ -1,3 +1,55 @@
+package login;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class User {
+
+    public Connection conectarBD(){
+        Connection conn = null; //N1
+        try { //N2
+            Class.forName("com.mysql.cj.jdbc.Driver").newInstance();            |
+            String url = "jdbc:mysql://127.0.0.1/test?user=lopes&password=123"; | //N3
+            conn = DriverManager.getConnection(url);                            |
+        } catch (Exception e) { //N4
+        }
+        return conn;   //N5 
+    }
+
+    public String nome = ""; //N6
+    public boolean result = false; //N7
+
+    public boolean verificarUsuario(String login, String senha){ //N8
+        String sql = "";N9
+        Connection conn = conectarBD(); //N10
+
+
+
+
+
+        sql = "select nome from usuarios ";      |
+        sql += "where login = '" + login + "'";  | //N11
+        sql += " and senha = '" + senha + "'";   |
+
+        try { //N12
+            Statement st = conn.createStatement(); |
+            ResultSet rs = st.executeQuery(sql);   | //N13
+            if(rs.next()){
+                result = true;                 |
+                nome = rs.getString("nome");   | //N14
+            }
+        } catch (Exception e) { //N15
+        }
+        return result; //N16
+    }
+}
+
+
+
+
+
 CAMINHOS BÁSICOS
 
 1) Conexão bem-sucedida e usuário encontrado (rs.next() verdadeiro)
