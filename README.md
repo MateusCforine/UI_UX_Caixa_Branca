@@ -62,11 +62,14 @@ M = E - N + 2P
 
 CAMINHOS BÁSICOS 
 
-1 - Quando a conexão e o IF estão Ok
+1 - Quando a conexão e o IF estão certos
+
 N1 - N2 - N3 - N4 - N5 - N7 - N8 - N9 - N10 - N11 - N12 - N13 - N14 - N16
 
-2 - Quando a conexão da certo e o IF da erro 
+2 - Quando a conexão está certa e o IF da erro 
+
 N1 - N2 - N3 - N4 - N5 - N7 -N8 - N9 - N10 - N11 - N12 - N15 - N16
 
 3 - Quando a conexão e o IF da erro 
+
 N1 - N2 - N3 - N4 - N5 - N6 - N7 - N8 - N9 - N10 - N11 - N12 - N15 - N16
