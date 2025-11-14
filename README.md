@@ -2,6 +2,12 @@ Após corrigir os erros no código, como a falta de conexão com o banco de dado
 
 <img width="600" height="197" alt="image" src="https://github.com/user-attachments/assets/4da253b3-01f6-49fb-ae66-61e4e7b8413d" />
 
+Link planilha Caixa Branca:
+
+https://docs.google.com/spreadsheets/d/1288oHH6ryL52TIsIf9zEpT_0ZhuATN18/edit?usp=sharing&ouid=108784636124368837174&rtpof=true&sd=true
+
+Para acessar o código corrigido, esse é o caminho: UI_UX_Caixa_Branca > Login > User.java
+
     
     
     1° Parte da Atividade - Teste Caixa Branca
