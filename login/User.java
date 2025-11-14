@@ -1,5 +1,6 @@
-// Pacote e importações
+// Pacote da classe
 package login;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -7,64 +8,64 @@ import java.sql.Statement;
 
 public class User {
 
-    // Conecta ao banco de dados
+    // Faz a conexão com o banco
     public Connection conectarBD(){
         Connection conn = null;
         try{
-            // Carrega o driver JDBC
-            Class.forName("com.mysql.cj.jdbc.Driver"); // Certifique-se de que o conector MySQL esteja no classpath
-            // Define a URL de conexão
+            // Carrega o driver (erro se o conector não estiver no projeto)
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // URL com usuário e senha (erro se qualquer info estiver incorreta)
             String url = "jdbc:mysql://127.0.0.1/test?user=root&password=mudar123";
-            // Estabelece a conexão
+
+            // Tenta conectar (erro se MySQL estiver desligado ou credenciais erradas)
             conn = DriverManager.getConnection(url);
+
         }catch (ClassNotFoundException e) {
-            // Erro ao carregar o driver
-            System.out.println("Erro: Driver do MySQL não encontrado.");
-            e.printStackTrace();
+            System.out.println("Driver do MySQL não encontrado.");
         }catch (Exception e) {
-            // Erro na conexão
             System.out.println("Erro ao conectar ao banco.");
-            e.printStackTrace();
         }
         return conn;
     }
 
-    // Declaração de variáveis
+    // Variáveis usadas na verificação
     public String nome = "";
     public boolean result = false;
 
-    // Verifica usuário no banco
+    // Consulta login e senha
     public boolean verificarUsuario(String login, String senha){
         String sql = "";
         Connection conn = conectarBD();
         
-        // Verifica se a conexão falhou
+        // Erro se a conexão falhar
         if (conn == null) {
             System.out.println("Conexão falhou.");
             return false;
         }
 
-        // Monta o SQL
+        // SQL simples (erro se tabela ou campos não existirem)
         sql += "select nome from usuarios where login = '" + login + "' and senha = '" + senha + "'";
 
         try{
-            // Executa a consulta
+            // Envia o SQL (erro se o banco recusar)
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
 
-            // Se encontrado, armazena o nome
+            // Achou o usuário
             if(rs.next()){
                 result = true;
                 nome = rs.getString("nome");
             }
+
         }catch (Exception e) {
-            // Erro na consulta
-            e.printStackTrace();
+            System.out.println("Erro ao executar a consulta.");
         }
+
         return result;
     }
 
-    // Método principal
+    // Teste do login
     public static void main(String[] args) {
         // Cria um objeto e verifica usuário
         User usuario = new User();
