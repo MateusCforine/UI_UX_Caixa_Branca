@@ -4,7 +4,10 @@ Após corrigir os erros no código, como a falta de conexão com o banco de dado
 
 Link planilha Caixa Branca, aba Caixa Branca (Estático):
 
-https://docs.google.com/spreadsheets/d/1288oHH6ryL52TIsIf9zEpT_0ZhuATN18/edit?usp=sharing&ouid=108784636124368837174&rtpof=true&sd=true
+<img width="753" height="636" alt="image" src="https://github.com/user-attachments/assets/b18b84c4-ca4c-40ed-862c-e4fc5d8fcd6d" />
+
+
+https://docs.google.com/spreadsheets/d/1-RhivEndmHv_hbaumLCJYW6y8HsG5Tzn/edit?usp=sharing&ouid=108784636124368837174&rtpof=true&sd=true
 
 Para acessar o código corrigido, esse é o caminho: Acesse o repositório UI_UX_Caixa_Branca > Login > User.java
 
